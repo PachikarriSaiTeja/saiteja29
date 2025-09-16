@@ -232,11 +232,12 @@ All colors MUST be HSL for perfect consistency
 
   .hover-glow::after {
     content: '';
-    @apply absolute inset-0 opacity-0 rounded-inherit;
+    @apply absolute inset-0 opacity-0;
     background: var(--gradient-primary);
     filter: blur(20px);
     z-index: -1;
     transition: var(--transition-smooth);
+    border-radius: inherit;
   }
 
   .hover-glow:hover::after {
