@@ -40,8 +40,6 @@ const skillCategories = [
 ];
 
 const Skills = () => {
-  console.log('Skills component rendering');
-  
   return (
     <section className="section-padding bg-muted/30">
       <div className="container-apple">

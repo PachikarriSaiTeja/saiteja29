@@ -5,8 +5,6 @@ import Experience from '@/components/Experience';
 import Contact from '@/components/Contact';
 
 const Index = () => {
-  console.log('Index component rendering');
-  
   return (
     <main className="min-h-screen">
       <Hero />

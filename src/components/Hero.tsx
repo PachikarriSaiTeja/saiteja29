@@ -2,8 +2,6 @@ import { ArrowDown, Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
 import heroImage from '@/assets/hero-workspace.jpg';
 
 const Hero = () => {
-  console.log('Hero component rendering');
-  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with gradient overlay */}
