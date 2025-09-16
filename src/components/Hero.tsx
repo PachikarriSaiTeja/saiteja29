@@ -1,7 +1,14 @@
 import { ArrowDown, Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 import heroImage from '@/assets/hero-workspace.jpg';
+import profilePhoto from '@/assets/profile-photo.png';
+import { ProfileToggle } from '@/components/ProfileToggle';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Hero = () => {
+  const [showProfile, setShowProfile] = useState(true);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with gradient overlay */}
@@ -19,9 +26,30 @@ const Hero = () => {
       <div className="absolute bottom-32 right-24 w-24 h-24 bg-accent/20 rounded-full blur-lg animate-float" style={{ animationDelay: '2s' }} />
       <div className="absolute top-1/2 right-12 w-16 h-16 bg-primary/5 rounded-full blur-md animate-float" style={{ animationDelay: '4s' }} />
 
+      {/* Profile Toggle */}
+      <ProfileToggle onToggle={setShowProfile} />
+
       {/* Content */}
       <div className="relative z-10 container-apple section-padding text-center">
         <div className="animate-fade-in-up">
+          {/* Profile Picture */}
+          {showProfile && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.5 }}
+              className="mb-8"
+            >
+              <Avatar className="w-32 h-32 mx-auto ring-4 ring-primary/20 hover:ring-primary/40 transition-all duration-300">
+                <AvatarImage src={profilePhoto} alt="SaiTeja Pachikarri" className="object-cover" />
+                <AvatarFallback className="text-2xl font-bold bg-gradient-to-br from-primary to-accent text-primary-foreground">
+                  SP
+                </AvatarFallback>
+              </Avatar>
+            </motion.div>
+          )}
+
           {/* Greeting */}
           <div className="glass-card inline-block px-6 py-3 mb-8 rounded-full">
             <p className="text-sm font-medium text-primary">Hello, I'm</p>

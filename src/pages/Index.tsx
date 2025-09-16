@@ -1,17 +1,21 @@
 import Hero from '@/components/Hero';
-import Skills from '@/components/Skills';
-import Projects from '@/components/Projects';
-import Experience from '@/components/Experience';
-import Contact from '@/components/Contact';
+import { EnhancedSkills } from '@/components/EnhancedSkills';
+import { ProjectShowcase } from '@/components/ProjectShowcase';
+import { InteractiveTimeline } from '@/components/InteractiveTimeline';
+import { EnhancedContact } from '@/components/EnhancedContact';
+import { InteractiveStats } from '@/components/InteractiveStats';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <ThemeToggle />
       <Hero />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Contact />
+      <InteractiveStats />
+      <EnhancedSkills />
+      <ProjectShowcase />
+      <InteractiveTimeline />
+      <EnhancedContact />
     </main>
   );
 };
